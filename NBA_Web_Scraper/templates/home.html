@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PPG / FG Percentage Checker</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #C41E3A;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+            background-color: #C41E3A;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+        select, input {
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #FFD700;
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1> USC couldn't make any free throws tonight </h1>
+    <h1> so I adjusted this project to show FT% so they can study from it</h1>
+    <form action="/analyze_player" method="POST">
+        <p>Player:</p>
+        <select name="player">
+            {% for p in players %}
+                <option value='{{p}}' {% if p == selected_player %}selected{% endif %}>{{p}}</option>
+            {% endfor %}
+        </select>
+        <p>What to display</p>
+        <select name="graph">
+            {% for p in graph %}
+                <option value='{{p}}' {% if p == selected_graph %}selected{% endif %}>{{p}}</option>
+            {% endfor %}
+        </select>
+        <p><input type="submit" value="Check Info"></p>
+    </form>
+</body>
+</html>

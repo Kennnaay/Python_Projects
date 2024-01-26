@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stats</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #C41E3A;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Free Throw Info</h1>
+    <form action="/analyze_player" method="POST">
+        <p>
+            <img src="data:image/png;base64,{{ fig }}" alt="Player Stats">
+        </p>
+    </form>
+    <p>
+        Go back by clicking <a href="/">here</a>.
+    </p>
+</body>
+</html>
